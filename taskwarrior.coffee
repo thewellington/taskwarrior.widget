@@ -30,14 +30,15 @@ style: """
     font-size: 16px
     line-height: 1.5
     margin-left: 0px
-    padding: 20px 20px 20px
-    top: 20%
+    padding: 0px 20px 20px
+    top: 0%
     left: 0%
+    width: 500px
     text-align: justify
 
     h1
-        font-size: 24px
-        font-weight: 400
+        font-size: 150%
+        font-weight: 300
         margin: 16px 0 8px
 
     strong
