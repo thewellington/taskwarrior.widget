@@ -3,8 +3,8 @@
 
 import sys
 
-#call main
-if __name__ == '__main__':
+def parse():
+    """This is the function"""
     taskarray = []
     for line in sys.stdin:
         taskarray.append(line) # = tasklist + line
@@ -12,6 +12,7 @@ if __name__ == '__main__':
     header = taskarray[2].split()
 
     row = 0
+#     print '<div class="content-box">'
     print "<h1>Tasks</h1>"
     print "<table>"
     for line in taskarray:
@@ -35,3 +36,8 @@ if __name__ == '__main__':
         print "</tr>"
         row += 1
     print "</table>"
+#     print "</div>"
+
+#call main
+if __name__ == '__main__':
+    parse()
