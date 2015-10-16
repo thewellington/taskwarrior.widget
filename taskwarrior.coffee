@@ -7,7 +7,7 @@
 # remove it.
 
 # this is the shell command that gets executed every time this widget refreshes
-command: "/usr/local/bin/task desktop | taskwarrior.widget/parse.py"
+command: "/usr/local/bin/task desktop 2>/dev/null | taskwarrior.widget/parse.py"
 
 # the refresh frequency in milliseconds
 refreshFrequency: 120000
