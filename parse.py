@@ -2,6 +2,19 @@
 """Takes the output of task <report> and prints it on the desktop using Ubersicht."""
 
 import sys
+import subprocess
+
+def tasksync():
+    """Sync Taskwarrior with In the AM"""
+    bashCommand = "/usr/local/bin/task sync 2>/dev/null"
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output - process.communicate()[0]
+    
+def taskreport():
+    """Pull Taskwarrior report"""
+    bashCommand = "/usr/local/bin/task desktop 2>/dev/null"
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output - process.communicate()[0]
 
 def parse():
     """This is the function"""
