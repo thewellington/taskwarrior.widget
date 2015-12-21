@@ -57,9 +57,11 @@ style: """
     th
         padding-right: 10px
         text-decoration: underline
+        vertical-align: top
 
     td
         padding-right: 10px
+        vertical-align: top
 
     .green
         color: #16fb13
