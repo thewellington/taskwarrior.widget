@@ -7,14 +7,13 @@ import subprocess
 def tasksync():
     """Sync Taskwarrior with In the AM"""
     bashCommand = "/usr/local/bin/task sync 2>/dev/null"
-    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-    output - process.communicate()[0]
+    return subprocess.call(bashCommand)
     
 def taskreport():
     """Pull Taskwarrior report"""
-    bashCommand = "/usr/local/bin/task desktop 2>/dev/null"
-    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-    output - process.communicate()[0]
+    #bashCommand = "/usr/local/bin/task desktop 2>/dev/null"
+    return subprocess.call(['/usr/local/bin/task','desktop','2>/dev/null'])
+    
 
 def parse():
     """This is the function"""
@@ -23,6 +22,9 @@ def parse():
    
     for line in sys.stdin:
         taskarray.append(line) # = tasklist + line
+
+#     for line in taskreport():
+#       taskarray.append(line)
 
     if not taskarray:
       return
