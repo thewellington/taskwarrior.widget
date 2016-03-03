@@ -18,7 +18,7 @@ update: (output, domEl) ->
 	
 	
 	# build the header row
-	headerRow = "<tr style='color:white'><th>ID</th><th>Due</th><th>Pri.</th><th>Proj.</th><th>Description</th><th>Tags</th></tr>"
+	headerRow = "<tr style='color:white'><th>id</th><th>due</th><th>pri.</th><th>description</th><th>proj.</th><th>tags</th></tr>"
 	$taskTable.append(headerRow)
 
 	# Get the JSON object containing all the tasks
@@ -111,9 +111,6 @@ update: (output, domEl) ->
 		else
 			finalString += "<td  style='color:rgba(0, 0, 255, #{cofAlpha})'>#{priority}</td>"
 
-		# Add the cell containing the project name
-		finalString += "<td  style='color:rgba(255, 255, 255, #{cofAlpha})'>#{project}</td>"
-
 		# Handle the cell containing the description
 		if dueDateOffset < 0
 			finalString += "<td style='color:rgba(255, 0, 0, #{cofAlpha})'>#{task.description}</td>"
@@ -121,7 +118,10 @@ update: (output, domEl) ->
 			finalString += "<td style='color:rgba(255, 200, 0, #{cofAlpha})'>#{task.description}</td>"
 		else
 			finalString += "<td style='color:rgba(255, 255, 255, #{cofAlpha})'>#{task.description}</td>"
-
+		
+		# Add the cell containing the project name
+		finalString += "<td  style='color:rgba(255, 255, 255, #{cofAlpha})'>#{project}</td>"
+		
 		# Add the cell containing the tags
 		finalString += "<td  style='color:rgba(50, 150, 50, #{cofAlpha})'>#{tags}</td>"
 		finalString += "</tr>"
