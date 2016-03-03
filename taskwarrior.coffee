@@ -26,26 +26,28 @@ style: """
 
     color: #fff
     font-weight: 300
-    font-family: Helvetica Neue
-    font-size: 16px
+    font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, 'Open Sans', sans-serif
+    font-smooth never
+    font-size: 12pt
     line-height: 1.5
     margin-left: 0px
     padding: 0px 20px 20px
     top: 0%
     left: 0%
-    width: 500px
+    width: 750px
     text-align: justify
 
     h1
         font-size: 150%
         font-weight: 300
+        text-decoration: underline
         margin: 16px 0 8px
 
     strong
         background: #ad7a7c
         color: #fff
         display: block
-        font-size: 16px
+        font-size: 12pt
         font-style: italic
         font-weight: 200
         margin: 12px -20px
