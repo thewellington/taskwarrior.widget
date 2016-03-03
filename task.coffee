@@ -15,6 +15,11 @@ update: (output, domEl) ->
 	# Find the HTML table and clear it before repopulating it
 	$taskTable = $(domEl).find("#container")
 	$taskTable.empty()
+	
+	
+	# build the header row
+	headerRow = "<tr style='color:white'><th>ID</th><th>Due</th><th>Pri.</th><th>Proj.</th><th>Description</th><th>Tags</th></tr>"
+	$taskTable.append(headerRow)
 
 	# Get the JSON object containing all the tasks
 	jsonObj = JSON.parse(output)
@@ -42,12 +47,16 @@ update: (output, domEl) ->
 			return
 
 		dueDateOffset = 10000  # ridiculously high number to indicate there is no due date
+		id = ''
 		priority = ''
 		project = ''
 		tags = ''
 		finalString = ''
 		cofAlpha = (i * 0.05) * (-1) + 1 # transparency for this line in the table
 
+		if task.id != undefined
+			id = task.id
+        
 		if task.due != undefined
 			# Task warrior date strings are weirdly formatted
 			dueDateIsoStr = task.due.slice(0, 4) + "-" + task.due.slice(4, 6) + "-" + task.due.slice(6, 11) + ":" + task.due.slice(11, 13) + ":" + task.due.slice(13);
@@ -79,6 +88,11 @@ update: (output, domEl) ->
 		else
 			finalString = "<tr style='background-color:rgba(255, 255, 255, #{cofAlpha*0.06})'>"
 
+		# Handle the cell containing the task id
+		finalString += "<td  style='color:rgba(255, 255, 255, #{cofAlpha})'>#{id}</td>"
+		
+		
+		
 		# Handle the cell containing the due date offset
 		if dueDateOffset < 0
 			finalString += "<td  style='color:rgba(255, 0, 0, #{cofAlpha})'>#{dueDateOffset}</td>"
@@ -123,7 +137,7 @@ style: """
 	left: 20px
 	top: 20px
 	font-family: monospace
-	font-size: 1.1em
+	font-size: 1.3em
 	font-weight: 200
 
 	#container
